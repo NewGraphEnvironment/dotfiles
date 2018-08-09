@@ -142,6 +142,7 @@ pip install shapely
 pip install fiona
 pip install rasterio
 
+pip install jupyter
 
 # -----------------------------
 # Node
@@ -164,13 +165,4 @@ gem install gist
 # -----------------------------
 # Misc
 # -----------------------------
-
-# Pandoc install isn't totally straightforward
-# http://johnmacfarlane.net/pandoc/installing.html
-# http://elroyjetson.org/dev-notes/osx/install-pandoc-with-homebrew
-# https://gist.github.com/schmurfy/3199254
-# Install MacTex: http://mirror.ctan.org/systems/mac/mactex/mactex-basic.pkg
-brew install haskell-platform
-cabal update
-cabal install pandoc
-# cabal installs pandoc in ~/.cabal/bin/pandoc. Add this to $PATH
+brew install pandoc
