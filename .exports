@@ -32,3 +32,25 @@ export MANPAGER='less -X';
 # Avoid issues with `gpg` as installed via Homebrew.
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
+
+
+# call python3 when calling python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH";
+
+# point to gdal file-gdb add on 
+export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins;
+
+# postgres
+export PGDATA=/usr/local/var/postgres
+export PGHOST=localhost
+export PGPORT=5432
+export PGDATABASE=postgis
+export PGUSER=postgres
+
+# put these together into a sqlalchemy URL
+# http://docs.sqlalchemy.org/en/latest/core/engines.html
+# note that the password is stored here in plain text viewable by anyone...
+export DATABASE_URL='postgresql://'$PGUSER':postgres@'$PGHOST':'$PGPORT'/'$PGDATABASE
+
+# and a OGR compatible string (quote when using)
+export PGOGR='host=localhost user=postgres dbname=postgis password=postgres port=5432'

@@ -93,5 +93,23 @@ brew install tree
 #brew install vbindiff
 # brew install zopfli
 
+
+# from https://github.com/cds-snc/laptop/blob/master/Brewfile
+
+brew cask install the-unarchiver
+brew cask install google-chrome
+brew cask install firefox
+brew cask install slack
+
+brew install node
+
+brew install hub
+brew cask install sublime-text
+brew cask install visual-studio-code
+brew cask install iterm2
+brew cask install insomnia
+brew cask install dropbox
+brew cask install vlc
+
 # Remove outdated versions from the cellar.
 brew cleanup
