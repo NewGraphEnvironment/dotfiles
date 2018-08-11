@@ -131,6 +131,14 @@ EOF
 # should connect successfully
 
 
+# lostgis  -- useful postgis extension
+pip install pgxnclient
+pgxn install lostgis
+pgxn load -d postgis lostgis
+
+# for dumping postgres queries to csv
+brew install psql2csv
+
 # -----------------------------
 # Python
 # -----------------------------
@@ -144,6 +152,10 @@ pip install rasterio
 
 pip install jupyter
 
+pip install bcdata
+pip install pgdata
+
+
 # -----------------------------
 # Node
 # -----------------------------
@@ -154,6 +166,7 @@ npm install -g togeojson
 npm install -g csv2geojson
 npm install -g mapshaper
 npm install -g http-server
+npm install -g tj/serve
 
 
 # -----------------------------
