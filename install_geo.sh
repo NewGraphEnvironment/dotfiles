@@ -24,10 +24,12 @@ brew install gdal2-python
 # point to gdal2
 brew link --force gdal2
 
-# gdal2-python formula should create a .pth file to its site-packages folder but it doesn't
-# show up for me a tthe moment, create one manually
-
-# brew info gdal2 notes changing the path, perhaps this should be used than brew link --force used above?
+# gdal2-python formula should create a .pth file to its site-packages folder...
+# https://github.com/OSGeo/homebrew-osgeo4mac/blob/master/Formula/gdal2-python.rb#L96
+# On last run it did not...
+# Perhaps following the directions given at `brew info gdal2` regarding PATH will 
+# help rather than using `brew link --force` used above??
+# but we can just create the .pth manually here for now:
 echo /usr/local/opt/gdal2-python/lib/python3.7/site-packages > /usr/local/lib/python3.7/site-packages/gdal2-python.pth
 
 brew services start postgresql       # homebrew provided service to stop/start db
