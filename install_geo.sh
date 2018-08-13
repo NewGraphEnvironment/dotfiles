@@ -69,11 +69,11 @@ max_locks_per_transaction = 64
 dynamic_shared_memory_type = posix
 checkpoint_timeout = 30min		# range 30s-1d
 maintenance_work_mem = 1GB
-effective_cache_size = 6GB
+effective_cache_size = 16GB
 work_mem = 500MB
 max_wal_size = 10GB
 wal_buffers = 16MB
-shared_buffers = 4GB
+shared_buffers = 8GB
 EOF
 
 # Edit /usr/local/var/postgres/postgresql.conf to read and load pgtune.conf
