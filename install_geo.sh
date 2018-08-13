@@ -24,6 +24,11 @@ brew install gdal2-python
 # point to gdal2
 brew link --force gdal2
 
+# gdal2-python formula should create a .pth file to its site-packages folder but it doesn't
+# show up for me a tthe moment, create one manually
+
+# brew info gdal2 notes changing the path, perhaps this should be used than brew link --force used above?
+echo /usr/local/opt/gdal2-python/lib/python3.7/site-packages > /usr/local/lib/python3.7/site-packages/gdal2-python.pth
 
 brew services start postgresql       # homebrew provided service to stop/start db
 
@@ -61,7 +66,6 @@ default_statistics_target = 100
 log_min_duration_statement = 2000
 max_connections = 100
 max_locks_per_transaction = 64
-shared_buffers = 128MB			# min 128kB
 dynamic_shared_memory_type = posix
 checkpoint_timeout = 30min		# range 30s-1d
 maintenance_work_mem = 1GB
