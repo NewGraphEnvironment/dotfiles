@@ -40,6 +40,9 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH";
 # point to gdal file-gdb add on 
 export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins;
 
+# Fiona wants PROJ_LIB set
+export PROJ_LIB="/usr/local/share/proj"
+
 # postgres
 export PGDATA=/usr/local/var/postgres
 export PGHOST=localhost
