@@ -7,30 +7,26 @@
 # install postgres
 brew install postgresql              
 
+brew install gdal --with-unsupported --with-complete
 
-# install GDAL now because postgis requires it and will grab the default gdal
-# if we don't install and link the osgeo4mac formula first
-# (the osgeo4mac tap makes the filegdb and python installs easy)
-brew tap osgeo/osgeo4mac
-
-# this will install postgresql
-brew install gdal2 --enable-unsupported --with-postgresql --with-complete --with-libkml
-
-export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins
-
-brew install gdal2-filegdb
-brew install gdal2-python
-
-# point to gdal2
-brew link --force gdal2
-
+# homebrew core gdal formula works fine but the osgeo4mac makes fgdb support easier
+# uncomment this if you need to write .gdb
+# (the osgeo4mac gdal formula seems to miss installation of useful gdal scripts, such as gdal2tiles.py)
+# -----------------
+# brew tap osgeo/osgeo4mac
+# brew install gdal2 --enable-unsupported --with-postgresql --with-complete --with-libkml
+# export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins
+# brew install gdal2-filegdb
+# brew install gdal2-python
+# brew link --force gdal2
 # gdal2-python formula should create a .pth file to its site-packages folder...
 # https://github.com/OSGeo/homebrew-osgeo4mac/blob/master/Formula/gdal2-python.rb#L96
 # On last run it did not...
 # Perhaps following the directions given at `brew info gdal2` regarding PATH will 
 # help rather than using `brew link --force` used above??
 # but we can just create the .pth manually here for now:
-echo /usr/local/opt/gdal2-python/lib/python3.7/site-packages > /usr/local/lib/python3.7/site-packages/gdal2-python.pth
+# echo /usr/local/opt/gdal2-python/lib/python3.7/site-packages > /usr/local/lib/python3.7/site-packages/gdal2-python.pth
+# -----------------
 
 brew services start postgresql       # homebrew provided service to stop/start db
 
