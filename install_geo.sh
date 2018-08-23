@@ -181,3 +181,4 @@ gem install gist
 # Misc
 # -----------------------------
 brew install pandoc
+brew install csvkit
