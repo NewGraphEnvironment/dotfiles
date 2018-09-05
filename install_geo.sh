@@ -157,6 +157,11 @@ pip install jupyter
 pip install bcdata
 pip install pgdata
 
+# python development
+# https://github.com/tqdm/tqdm/issues/460
+sudo mkdir -p /usr/local/man
+sudo chown -R "$USER:admin" /usr/local/man
+pip install twine
 
 # -----------------------------
 # Node
