@@ -5,7 +5,7 @@
 # -----------------------------------------------------
 
 # install postgres
-brew install postgresql              
+brew install postgresql
 
 brew install gdal --with-unsupported --with-complete
 
@@ -22,7 +22,7 @@ brew install gdal --with-unsupported --with-complete
 # gdal2-python formula should create a .pth file to its site-packages folder...
 # https://github.com/OSGeo/homebrew-osgeo4mac/blob/master/Formula/gdal2-python.rb#L96
 # On last run it did not...
-# Perhaps following the directions given at `brew info gdal2` regarding PATH will 
+# Perhaps following the directions given at `brew info gdal2` regarding PATH will
 # help rather than using `brew link --force` used above??
 # but we can just create the .pth manually here for now:
 # echo /usr/local/opt/gdal2-python/lib/python3.7/site-packages > /usr/local/lib/python3.7/site-packages/gdal2-python.pth
@@ -47,7 +47,7 @@ psql -d postgis -c "CREATE EXTENSION postgis;"
 # tune the database
 
 # This writes settings to /usr/local/var/postgres/pgtune.conf to optimize
-# postgres for running on big postgis databases. These settings have been 
+# postgres for running on big postgis databases. These settings have been
 # tested on a 2018 Macbook Pro with 32GB RAM.
 # http://big-elephants.com/2012-12/tuning-postgres-on-macos/
 
@@ -142,7 +142,7 @@ pgxn load -d postgis lostgis
 brew install psql2csv
 
 # -----------------------------
-# Python
+# Python geo
 # -----------------------------
 pip install virtualenv
 pip install pyodbc
@@ -157,11 +157,16 @@ pip install jupyter
 pip install bcdata
 pip install pgdata
 
-# python development
+# -----------------------------
+# Python dev
+# -----------------------------
 # https://github.com/tqdm/tqdm/issues/460
 sudo mkdir -p /usr/local/man
 sudo chown -R "$USER:admin" /usr/local/man
 pip install twine
+pip install flake8
+pip install black
+pip install white
 
 # -----------------------------
 # Node
