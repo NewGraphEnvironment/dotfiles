@@ -192,3 +192,4 @@ gem install gist
 # -----------------------------
 brew install pandoc
 brew install csvkit
+brew install rmtrash
