@@ -10,22 +10,26 @@ brew install postgresql
 brew install gdal --with-unsupported --with-complete
 
 # homebrew core gdal formula works fine but the osgeo4mac makes fgdb support easier
-# uncomment this if you need to write .gdb
-# (the osgeo4mac gdal formula seems to miss installation of useful gdal scripts, such as gdal2tiles.py)
+# adjust and uncomment below if writing to .gdb
 # -----------------
-# brew tap osgeo/osgeo4mac
-# brew install gdal2 --enable-unsupported --with-postgresql --with-complete --with-libkml
-# export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins
-# brew install gdal2-filegdb
-# brew install gdal2-python
-# brew link --force gdal2
-# gdal2-python formula should create a .pth file to its site-packages folder...
-# https://github.com/OSGeo/homebrew-osgeo4mac/blob/master/Formula/gdal2-python.rb#L96
-# On last run it did not...
-# Perhaps following the directions given at `brew info gdal2` regarding PATH will
-# help rather than using `brew link --force` used above??
-# but we can just create the .pth manually here for now:
-# echo /usr/local/opt/gdal2-python/lib/python3.7/site-packages > /usr/local/lib/python3.7/site-packages/gdal2-python.pth
+
+# Latest postgres/postgis is often required, but we might not actually want it.
+# This example upgrades then revert postgres/postgis
+
+# brew unpin postgresql
+# brew unpin postgis
+# brew upgrade postgresql
+# brew switch postgresql 10.5
+# brew switch postgis 2.5.0
+
+# With postgres updated, switch gdal from homebrew core to osgeo4mac
+
+#brew uninstall --ignore-dependencies gdal
+#brew tap osgeo/osgeo4mac
+#brew install gdal2 --enable-unsupported --with-postgresql --with-complete --with-libkml
+#export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins
+#brew install gdal2-filegdb
+# this added to .path : export PATH="/usr/local/opt/gdal2/bin:$PATH"
 # -----------------
 
 brew services start postgresql       # homebrew provided service to stop/start db
@@ -156,6 +160,14 @@ pip install jupyter
 
 pip install bcdata
 pip install pgdata
+
+# -----------------------------
+# another python package manager
+# (brew cask may be a better approach?)
+# -----------------------------
+wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+bash Miniconda3-latest-MacOSX-x86_64.sh
+rm Miniconda3-latest-MacOSX-x86_64.sh
 
 # -----------------------------
 # Python dev
