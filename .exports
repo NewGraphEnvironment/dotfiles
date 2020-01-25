@@ -37,7 +37,7 @@ export GPG_TTY=$(tty);
 # call python3 when calling python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH";
 
-# point to gdal file-gdb add on 
+# point to gdal file-gdb add on
 export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins;
 
 # Fiona wants PROJ_LIB set
@@ -57,3 +57,5 @@ export DATABASE_URL='postgresql://'$PGUSER':postgres@'$PGHOST':'$PGPORT'/'$PGDAT
 
 # and a OGR compatible string (quote when using)
 export PGOGR='host=localhost user=postgres dbname=postgis password=postgres port=5432'
+
+export TERRAINCACHE="/users/snorris/Data/terrain-tiles"
