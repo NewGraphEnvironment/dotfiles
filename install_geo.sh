@@ -7,7 +7,7 @@
 # install postgres
 brew install postgresql
 
-brew install gdal --with-unsupported --with-complete
+brew install gdal
 
 # homebrew core gdal formula works fine but the osgeo4mac makes fgdb support easier
 # adjust and uncomment below if writing to .gdb
@@ -38,14 +38,16 @@ brew services start postgresql       # homebrew provided service to stop/start d
 # we want a default superuser postgres/postgres for dev, create it
 createuser -s -e postgres -U $USER
 
+# create our primary gis db
+createdb postgis
+
 # set the password (rather than interactively with the createuser -P option)
-psql -c -U $USER "alter user postgres with password postgres;"
+psql -U $USER -c "alter user postgres with password postgres;"
 
 # install postgis *after* installing gdal2
 brew install postgis
 
-# create a default postgis enabled db with user postgres/postgres
-createdb postgis
+# enable postgis
 psql -d postgis -c "CREATE EXTENSION postgis;"
 
 # tune the database
@@ -59,17 +61,17 @@ cat << EOF > /usr/local/var/postgres/pgtune.conf
 log_timezone = 'Canada/Pacific'
 datestyle = 'iso, mdy'
 timezone = 'Canada/Pacific'
-lc_messages = 'en_US.UTF-8'			# locale for system error message
-lc_monetary = 'en_US.UTF-8'			# locale for monetary formatting
-lc_numeric = 'en_US.UTF-8'			# locale for number formatting
-lc_time = 'en_US.UTF-8'				# locale for time formatting
+lc_messages = 'en_US.UTF-8'         # locale for system error message
+lc_monetary = 'en_US.UTF-8'         # locale for monetary formatting
+lc_numeric = 'en_US.UTF-8'          # locale for number formatting
+lc_time = 'en_US.UTF-8'             # locale for time formatting
 default_text_search_config = 'pg_catalog.english'
 default_statistics_target = 100
 log_min_duration_statement = 2000
 max_connections = 100
 max_locks_per_transaction = 64
 dynamic_shared_memory_type = posix
-checkpoint_timeout = 30min		# range 30s-1d
+checkpoint_timeout = 30min          # range 30s-1d
 maintenance_work_mem = 1GB
 effective_cache_size = 16GB
 work_mem = 500MB
@@ -128,7 +130,7 @@ Port        = 5432
 Database    = postgis
 Username    = postgres
 Password    = postgres
-Protocol    = 10.4
+Protocol    = 12.1
 Debug       = 1
 EOF
 
@@ -138,9 +140,16 @@ EOF
 
 
 # lostgis  -- useful postgis extension
-pip install pgxnclient
-pgxn install lostgis
-pgxn load -d postgis lostgis
+#pip install pgxnclient
+#pgxn install lostgis
+#pgxn load -d postgis lostgis
+
+# just clone, install functions needed and delete
+git clone https://github.com/gojuno/lostgis.git
+psql -f lostgis/sql/functions/ST_Safe_Repair.sql
+psql -f lostgis/sql/functions/ST_Safe_Difference.sql
+psql -f lostgis/sql/functions/ST_Safe_Intersection.sql
+rm -rf lostgis
 
 # for dumping postgres queries to csv
 brew install psql2csv
@@ -194,14 +203,9 @@ npm install -g tj/serve
 
 
 # -----------------------------
-# Ruby (https://github.com/nicolashery/mac-dev-setup)
-# -----------------------------
-curl -L https://get.rvm.io | bash -s stable --ruby
-gem install gist
-
-# -----------------------------
 # Misc
 # -----------------------------
+brew install gist
 brew install pandoc
 brew install csvkit
 brew install rmtrash
