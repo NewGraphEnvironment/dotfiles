@@ -52,8 +52,7 @@ export PGUSER=postgres
 
 # put these together into a sqlalchemy URL
 # http://docs.sqlalchemy.org/en/latest/core/engines.html
-# note that the password is stored here in plain text viewable by anyone...
-export DATABASE_URL='postgresql://'$PGUSER':postgres@'$PGHOST':'$PGPORT'/'$PGDATABASE
+export DATABASE_URL='postgresql://'$PGUSER'@'$PGHOST':'$PGPORT'/'$PGDATABASE
 
 # and a OGR compatible string (quote when using)
 export PGOGR='host=localhost user=postgres dbname=postgis password=postgres port=5432'
