@@ -157,6 +157,8 @@ brew install psql2csv
 # -----------------------------
 # Python geo
 # -----------------------------
+brew install spatialindex
+pip install rtree
 pip install virtualenv
 pip install pyodbc
 pip install psycopg2-binary
