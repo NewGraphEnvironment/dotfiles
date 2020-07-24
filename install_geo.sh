@@ -203,6 +203,8 @@ npm install -g mapshaper
 npm install -g http-server
 npm install -g tj/serve
 
+# sometimes you want a specific node version, use nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 
 # -----------------------------
 # Misc
