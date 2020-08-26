@@ -10,8 +10,8 @@ PATH=/usr/local/opt/ruby/bin:$PATH
 PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
 PATH=~/bin:$PATH
 PATH=$PATH:$GOPATH/bin
-PATH=/usr/local/opt/python/libexec/bin:$PATH
 PATH=/Users/snorris/.cargo/bin:$PATH
 #PATH=/usr/local/opt/gdal2/bin:$PATH
 PATH=~/miniconda3/bin:$PATH
+PATH=/usr/local/opt/python@3.8/libexec/bin:$PATH
 export PATH
