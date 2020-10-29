@@ -213,3 +213,6 @@ brew install gist
 brew install pandoc
 brew install csvkit
 brew install rmtrash
+
+wget -O ~/bin/pgconman.py https://raw.githubusercontent.com/perrygeo/pgconman/master/pgconman.py
+

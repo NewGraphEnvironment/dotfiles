@@ -197,3 +197,8 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+function pgconman {
+    python3 ~/bin/pgconman.py
+    source ~/.pg_active_connection_env.sh
+}
