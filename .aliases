@@ -150,3 +150,5 @@ alias path='echo -e ${PATH//:/\\n}'
 # switch to conda python
 alias conda-activate='source $HOME/miniconda3/bin/activate'
 alias ca='conda-activate'
+
+alias qgis='open -n /Applications/QGIS.app'
