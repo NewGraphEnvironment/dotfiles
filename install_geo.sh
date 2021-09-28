@@ -216,3 +216,19 @@ brew install rmtrash
 
 wget -O ~/bin/pgconman.py https://raw.githubusercontent.com/perrygeo/pgconman/master/pgconman.py
 
+
+# ---
+# LaTeX (enough for building markdown files to pdf with Sphinx)
+# ---
+brew install basictex
+sudo tlmgr update --self
+sudo tlmgr install latexmk
+sudo tlmgr install tex-gyre
+sudo tlmgr install fncychap
+sudo tlmgr install wrapfig
+sudo tlmgr install capt-of
+sudo tlmgr install framed
+sudo tlmgr install needspace
+sudo tlmgr install tabulary
+sudo tlmgr install varwidth
+sudo tlmgr install titlesec

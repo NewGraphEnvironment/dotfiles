@@ -2,6 +2,7 @@
 export GOPATH=$HOME/go
 
 # Set $PATH
+PATH=~/miniconda3/bin:$PATH
 PATH=/usr/bin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=/usr/sbin:$PATH
@@ -12,6 +13,5 @@ PATH=~/bin:$PATH
 PATH=$PATH:$GOPATH/bin
 PATH=/Users/snorris/.cargo/bin:$PATH
 #PATH=/usr/local/opt/gdal2/bin:$PATH
-PATH=~/miniconda3/bin:$PATH
 PATH=/usr/local/opt/python@3.8/libexec/bin:$PATH
 export PATH
