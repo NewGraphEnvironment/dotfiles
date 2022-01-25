@@ -51,3 +51,6 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
 
 # use direnv
 eval "$(direnv hook bash)"
+
+# source oc bash completion
+source ~/bin/oc_bash_completion
