@@ -1,6 +1,9 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";
 
+# add homebrew to the path
+export PATH=/opt/homebrew/bin:$PATH
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
@@ -50,7 +53,8 @@ complete -W "NSGlobalDomain" defaults;
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
 
 # use direnv
-eval "$(direnv hook bash)"
+# eval "$(direnv hook bash)"
 
 # source oc bash completion
-source ~/bin/oc_bash_completion
+# UPDATE - not currently available on M1
+#source ~/bin/oc_bash_completion

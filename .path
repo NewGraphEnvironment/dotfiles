@@ -1,17 +1,15 @@
 # Set $GOPATH
 export GOPATH=$HOME/go
+PATH=$PATH:$GOPATH/bin
 
 # Set $PATH
 PATH=~/miniconda3/bin:$PATH
 PATH=/usr/bin:$PATH
-PATH=/usr/local/bin:$PATH
+PATH=$(brew --prefix)/bin:$PATH
 PATH=/usr/sbin:$PATH
 PATH=/sbin:$PATH
-PATH=/usr/local/opt/ruby/bin:$PATH
-PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+PATH=$(brew --prefix)/opt/ruby/bin:$PATH
+PATH=$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH
 PATH=~/bin:$PATH
-PATH=$PATH:$GOPATH/bin
-PATH=/Users/snorris/.cargo/bin:$PATH
-#PATH=/usr/local/opt/gdal2/bin:$PATH
-PATH=/usr/local/opt/python@3.8/libexec/bin:$PATH
+PATH=$(brew --prefix)/opt/python/libexec/bin:$PATH
 export PATH

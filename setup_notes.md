@@ -1,14 +1,48 @@
-# mac GIS setup notes
+# Apple computer setup
 
-## checklist
+## First steps (manual)
 
-- vwmare
-- windows/arcgis
-- mail
-- projects
-- data
-- backups
+- log in etc
+- enable tap to click
+- install homebrew
 
+		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+- add brew to path for zsh and bash:
+
+		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/snorris/.zprofile
+		eval "$(/opt/homebrew/bin/brew shellenv)"	
+
+		echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.bash_profile && source ~/.bash_profile
+
+- switch between zsh / bash defaults
+
+		chsh -s /bin/bash
+		chsh -s /bin/zsh
+
+- download setup scripts
+
+		mkdir -p ~/Projects/repo && cd ~/Projects/repo 
+		git clone https://github.com/smnorris/dotfiles.git && cd dotfiles
+
+- install brew stuff
+
+		./brew.sh
+
+- quit out of terminal, use sublime to customize scripts, run scripts in iterm2
+
+		source bootstrap.sh
+		./.macos
+
+## accounts etc
+
+- log into chrome, sync once
+- add apple and google accounts
+- download 1password, add chrome extension, enable safari extension
+
+## teams, citrix
+
+manual installs
 
 ## QGIS
 - install manually as per qgis.org download page (including python 3.6 and gdal)

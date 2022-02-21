@@ -33,18 +33,21 @@ export MANPAGER='less -X';
 # https://stackoverflow.com/a/42265848/96656
 export GPG_TTY=$(tty);
 
+# Hide the “default interactive shell is now zsh” warning on macOS.
+export BASH_SILENCE_DEPRECATION_WARNING=1;
 
 # call python3 when calling python
-export PATH="/usr/local/opt/python/libexec/bin:$PATH";
+#export PATH="/usr/local/opt/python/libexec/bin:$PATH";
 
 # point to gdal file-gdb add on
-export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins;
+#export GDAL_DRIVER_PATH=/usr/local/lib/gdalplugins;
 
 # Fiona wants PROJ_LIB set
-export PROJ_LIB="/usr/local/share/proj"
+#export PROJ_LIB="/usr/local/share/proj"
+export PROJ_LIB=/opt/homebrew/share/proj
 
 # postgres
-export PGDATA=/usr/local/var/postgres
+export PGDATA=/opt/homebrew/var/postgres
 export PGHOST=localhost
 export PGPORT=5432
 export PGDATABASE=postgis
