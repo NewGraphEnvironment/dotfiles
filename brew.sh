@@ -24,9 +24,12 @@ brew install findutils
 brew install gnu-sed
 # Install a modern version of Bash.
 brew install bash
-brew install bash-completion2
+brew install bash-completion@2
+
+
 
 # Switch to using brew-installed bash as default shell
+# I this messes up we can revert like this https://stackoverflow.com/questions/55562522/when-i-start-my-terminal-i-get-login-usr-local-bin-bash-no-such-file-or-dire
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
   chsh -s "${BREW_PREFIX}/bin/bash";
@@ -59,15 +62,16 @@ brew install tree
 brew install node
 brew install hub
 
-brew install --cask iterm2
-brew install --cask the-unarchiver
-brew install --cask google-chrome
-brew install --cask firefox
-brew install --cask slack
-brew install --cask sublime-text
-brew install --cask visual-studio-code
+# nneded to force these since they were already installed
+brew install --cask iterm2 --force
+brew install --cask the-unarchiver --force
+brew install --cask google-chrome --force
+brew install --cask firefox --force
+brew install --cask slack --force
+brew install --cask sublime-text --force
+brew install --cask visual-studio-code --force
 # brew install --cask dropbox -- use beta with m1 support for now
-brew install --cask docker
+brew install --cask docker --force
 
 
 # Remove outdated versions from the cellar.

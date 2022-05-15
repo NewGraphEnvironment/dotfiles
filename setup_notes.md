@@ -10,7 +10,7 @@
 
 - add brew to path for zsh and bash:
 
-		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/snorris/.zprofile
+		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/airvine/.zprofile
 		eval "$(/opt/homebrew/bin/brew shellenv)"	
 
 		echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.bash_profile && source ~/.bash_profile
@@ -31,7 +31,11 @@
 
 - quit out of terminal, use sublime to customize scripts, run scripts in iterm2
 
-		source bootstrap.sh
+Create a GitHub personal access token:
+    https://github.com/settings/tokens/new?scopes=gist,repo,workflow&description=Homebrew
+  echo 'export HOMEBREW_GITHUB_API_TOKEN=your_token_here' >> ~/.zshrc
+
+		./bootstrap.sh
 		./.macos
 
 ## accounts etc
@@ -64,4 +68,16 @@ host    all             all             24.68.143.188/16        md5
 In VMWare, point to the server by editing the hosts file (C:\Windows\System32\drivers\etc)
 ]see https://stackoverflow.com/questions/3235011/vmware-fusion-connecting-to-hosts-web-server-from-guest/19824282#19824282 (so good)
 
+# 20220513
+Updated curl with brew install curl
+it gave me this message so this is what I did
 
+If you need to have curl first in your PATH, run:
+  echo 'export PATH="/opt/homebrew/opt/curl/bin:$PATH"' >> ~/.zshrc
+
+For compilers to find curl you may need to set:
+  export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
+  export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
+
+For pkg-config to find curl you may need to set:
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/curl/lib/pkgconfig"

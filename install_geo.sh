@@ -8,10 +8,14 @@
 brew install postgresql
 
 brew install gdal
-brew services start postgresql       # homebrew provided service to stop/start db
+
+# rm /opt/homebrew/var/postgres/postmaster.pid  #had issues with connection so tried this but it didn't work https://stackoverflow.com/questions/13410686/postgres-could-not-connect-to-server
+
+
 
 # homebrew now runs initdb, creating superuser with the user account (as in ubuntu)...
 # we want a default superuser postgres/postgres for dev, create it
+
 createuser -s -e postgres -U $USER
 
 # create our primary gis db
@@ -85,6 +89,16 @@ brew services restart postgres
 brew install psql2csv
 
 # -----------------------------
+# another python package manager
+# (brew cask may be a better approach?)
+# -----------------------------
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+bash Miniconda3-latest-MacOSX-arm64.sh
+rm Miniconda3-latest-MacOSX-arm64.sh
+conda config --set auto_activate_base false
+
+
+# -----------------------------
 # Python geo
 # -----------------------------
 pip install rtree
@@ -96,14 +110,7 @@ pip install rasterstats
 
 pip install pgdata
 
-# -----------------------------
-# another python package manager
-# (brew cask may be a better approach?)
-# -----------------------------
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
-bash Miniconda3-latest-MacOSX-arm64.sh
-rm Miniconda3-latest-MacOSX-arm64.sh
-conda config --set auto_activate_base false
+
 
 # -----------------------------
 # Python dev
@@ -123,6 +130,8 @@ brew install nvm
 npm install -g http-server
 npm install -g tj/serve
 
+# -------------------here up unhash
+
 # add as necessary
 #npm install -g topojson
 #npm install -g tokml
@@ -134,6 +143,7 @@ npm install -g tj/serve
 # -----------------------------
 # Docker
 # -----------------------------
+# already did this
 brew install --cask docker
 
 # -----------------------------
