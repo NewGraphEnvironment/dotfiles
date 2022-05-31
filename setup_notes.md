@@ -68,7 +68,7 @@ host    all             all             24.68.143.188/16        md5
 In VMWare, point to the server by editing the hosts file (C:\Windows\System32\drivers\etc)
 ]see https://stackoverflow.com/questions/3235011/vmware-fusion-connecting-to-hosts-web-server-from-guest/19824282#19824282 (so good)
 
-# 20220513
+# Curl
 Updated curl with brew install curl
 it gave me this message so this is what I did
 
@@ -81,3 +81,67 @@ For compilers to find curl you may need to set:
 
 For pkg-config to find curl you may need to set:
   export PKG_CONFIG_PATH="/opt/homebrew/opt/curl/lib/pkgconfig"
+
+
+# General Environmental Variables for Gorbs
+
+You can edit your .bash_profile in your home directory (`/Users/airvine`).  After you edit the file you need to run it fo the changes to take place. 
+
+    source ~/.bash_profile
+
+Still figuring it our but it seems that Rstudio has it's own environment so it can't always access global variables. I am a bit lost by it all. you can use `usethis::edit_r_environ()` to see and edit R specific variable that will run in all your sessions...  They look like this:
+
+    DO_SPACES_REGION="sfo3"
+
+  
+# Zotero
+
+    brew install zotero  
+    
+copy over library from old machine to new `Users/airvine/zotero`- this is the default location
+install betterbibtex - 'citation key format' is:  
+
+    [auth.etal:lower:replace=.,_][>0][year][veryshorttitle2]|[title][year]
+    
+  * in better bibtex settings `Export/BibTex` check Export unicode as plain-test and "Add URLs to BibTex export: setting = "in the 'url' field""
+    
+install Zotfile.  Settings in Zotfile `Tools/ZotFile Preferences/Renaming Rules/ Use Zotero to Rename is *checked** with default:  
+
+    {%a_}{%y_}{%t}
+    
+  * other defaults are already checked.
+    
+We don't need to point to `Users/airvine/zotero` since it is the default https://www.zotero.org/support/zotero_data#restoring_your_zotero_data_from_a_backup 
+
+We set it up to sync just our shared libraries on Zotero.
+
+# Digital Ocean Droplets and custom domain
+https://docs.digitalocean.com/tutorials/dns-registrars/#registrar-google-domains
+follow link to the setup from there
+
+https://docs.digitalocean.com/products/networking/dns/how-to/manage-records/
+https://docs.digitalocean.com/products/networking/dns/how-to/add-subdomain/
+
+
+# Git
+
+So when we transfer to the mac we want to set auto-detect line endings for each repo we copied over to the mac from windows if we don't want git status to think all our files have changed. We don't want to do this globally because of https://github.com/mathiasbynens/dotfiles/issues/149 
+
+    git config --local core.autocrlf true
+    
+git config file lives in repo directory in .git/config
+
+# Java
+
+    https://www.azul.com/downloads/?package=jdk#download-openjdk
+    https://cdn.azul.com/zulu/bin/zulu11.56.19-ca-jdk11.0.15-macosx_aarch64.dmg
+
+    
+# gmailr
+
+Setup instructions at https://github.com/r-lib/gmailr
+
+
+
+
+
