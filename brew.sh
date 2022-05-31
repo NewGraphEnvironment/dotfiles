@@ -74,5 +74,22 @@ brew install --cask visual-studio-code --force
 brew install --cask docker --force
 
 
+# 202205 al
+
+brew install --cask zotero
+# fixes issues with pdftools and rayshader packages
+brew install --cask xquartz
+# deals with keychain for git gpg signing
+brew install --cask gpg-suite
+
+brew install awk
+brew install zoom
+brew install --cask zoom
+brew install zotero  
+brew install doctl
+brew install s3cmd
+brew install libmagic
+
+
 # Remove outdated versions from the cellar.
 brew cleanup
