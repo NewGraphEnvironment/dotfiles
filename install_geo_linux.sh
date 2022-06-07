@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# after setting up a new user with sudo (documented in the rmarkdown doc) we install brew on the remote machine and add it to path
+
+
+
 # -----------------------------------------------------
 # Install and setup GDAL / Postgresql / PostGIS / etc
 # -----------------------------------------------------
@@ -8,6 +12,8 @@
 brew install postgresql
 
 brew install gdal
+
+brew services start postgresql       # homebrew provided service to stop/start db
 
 # rm /opt/homebrew/var/postgres/postmaster.pid  #had issues with connection so tried this but it didn't work https://stackoverflow.com/questions/13410686/postgres-could-not-connect-to-server
 

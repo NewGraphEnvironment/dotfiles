@@ -139,9 +139,34 @@ git config file lives in repo directory in .git/config
     
 # gmailr
 
-Setup instructions at https://github.com/r-lib/gmailr
+Setup instructions at 
 
+    https://github.com/r-lib/gmailr 
+    https://developers.google.com/workspace/guides/create-project
+    https://developers.google.com/gmail/api
+    
+    
+made a new environment to install the python tools
 
+    conda create -n gmailr
+    conda activate gmailr
+    pip install --upgrade google-api-python-client google-auth-httplib2 google-auth-oauthlib
+    
+getting error - something is wrong with my entire setup.  prob need to tear everything down and start over :(
 
+  `WARNING: There was an error checking the latest version of pip.`
+  
+    mkdir quickstart
+    
+In here I had to store my credentials for the gmail api downloaded from google console into the `gmailr/quickstart` folder and renamed `credentials.json`.
+    
+    
+# Moving files around
+
+    mv /Volumes/backup_2022/backups/new_graph/archive/safety/ /Users/airvine/projects/current/ 
+
+# Setting postgres on Digital Ocean
+
+built a custom script to setup postgres with brew on DO machine.  The prep is done with 0600-pg-analogsea in `setup-pg-2022` and the rest is done from this repo with `install_geo_linux.sh`
 
 
