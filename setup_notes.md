@@ -8,12 +8,13 @@
 
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-- add brew to path for zsh and bash:
+- add brew bin to path for zsh and bash. Add sbin to path for bash:
 
 		echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/airvine/.zprofile
 		eval "$(/opt/homebrew/bin/brew shellenv)"	
 
 		echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.bash_profile && source ~/.bash_profile
+		echo "export PATH=/opt/homebrew/sbin:$PATH" >> ~/.bash_profile && source ~/.bash_profile
 
 - switch between zsh / bash defaults
 
