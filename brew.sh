@@ -90,6 +90,19 @@ brew install doctl
 brew install s3cmd
 brew install libmagic
 
+# for focus
+brew install --cask pomatez
+
+# install miniconda with brew and initialize
+brew install --cask miniconda
+
+# it tells me to run this line below but it didn't work
+# conda init "$(basename "${SHELL}")"
+# then it told me to initialize the shell with 
+conda init bash
+conda config --set auto_activate_base false
+
+# I went to manually do the same thing in the zsh shell but it seemed to work already. hmm.
 
 # Remove outdated versions from the cellar.
 brew cleanup
