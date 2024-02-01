@@ -90,12 +90,12 @@ brew install psql2csv
 
 # -----------------------------
 # another python package manager
-# (brew cask may be a better approach?)
+# (tried with brew cask in the brew.sh file...)
 # -----------------------------
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
-bash Miniconda3-latest-MacOSX-arm64.sh
-rm Miniconda3-latest-MacOSX-arm64.sh
-conda config --set auto_activate_base false
+# wget https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+# bash Miniconda3-latest-MacOSX-arm64.sh
+# rm Miniconda3-latest-MacOSX-arm64.sh
+# conda config --set auto_activate_base false
 
 
 # -----------------------------

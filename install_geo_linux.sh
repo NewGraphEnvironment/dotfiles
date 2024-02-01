@@ -152,6 +152,9 @@ npm install -g tj/serve
 # already did this
 brew install --cask docker
 
+# jq for geojson parseinig
+brew install jq
+
 # -----------------------------
 # Misc
 # -----------------------------
