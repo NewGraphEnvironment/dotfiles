@@ -1,0 +1,56 @@
+{
+    "default_project_location": "~/Projects/repo",
+    "jobs_tab_visibility": "shown",
+    "document_author": "Al Irvine",
+    "initial_working_directory": "~/Projects/repo",
+    "editor_theme": "Cobalt",
+    "posix_terminal_shell": "bash",
+    "save_workspace": "never",
+    "load_workspace": false,
+    "visual_markdown_editing_is_default": true,
+    "source_with_echo": true,
+    "margin_column": 120,
+    "highlight_r_function_calls": true,
+    "rainbow_parentheses": true,
+    "panes": {
+        "quadrants": [
+            "Source",
+            "Console",
+            "TabSet1",
+            "TabSet2"
+        ],
+        "tabSet1": [
+            "Environment",
+            "History",
+            "Build",
+            "VCS",
+            "Tutorial",
+            "Packages",
+            "Presentation"
+        ],
+        "tabSet2": [
+            "Files",
+            "Plots",
+            "Connections",
+            "Help",
+            "Viewer",
+            "Presentations"
+        ],
+        "hiddenTabSet": [
+            "Presentations"
+        ],
+        "console_left_on_top": false,
+        "console_right_on_top": true,
+        "additional_source_columns": 0
+    },
+    "zotero_libraries": [
+        "My Library",
+        "newgraph_2022",
+        "Fish_passage",
+        "New Graph",
+        "NewGraphEnvironment"
+    ],
+    "show_hidden_files": true,
+    "copilot_enabled": true,
+    "doc_outline_show": "sections_and_chunks"
+}
