@@ -25,10 +25,11 @@ usethis:::restart_rstudio
 #' @shortcut Shift+Cmd+-
 function(){
   library(conflicted)
-  library(fpr)
   library(devtools)
   library(tidyverse)
   library(sf)
+  library(rfp)
+  library(fpr)
 }
 #' Load devtools
 #'
